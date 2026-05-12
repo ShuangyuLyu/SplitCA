@@ -1,0 +1,13 @@
+build/
+build-*/
+.cache/
+tmp/
+.venv/
+.vscode/
+__pycache__/
+*.log
+*.ca
+cnf_benchmarks
+nnf_benchmarks
+build_dbg/
+command.txt

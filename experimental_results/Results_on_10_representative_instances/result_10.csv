@@ -1,0 +1,11 @@
+Instance,min.,avg.,time
+dreamcast.cnf,6560,6625.0,31516.3
+ecos-icse11.cnf,5577,5654.7,29464.7
+freebsd-icse11.cnf,6953,7054.9,82894.2
+integrator_arm9.cnf,7995,8075.1,34172.1
+linux.cnf,6444,6510.8,32903.8
+mpc50.cnf,5070,5093.2,30718.1
+ocelot.cnf,5818,5901.3,38469.1
+pc_i82544.cnf,6121,6184.4,37414.6
+refidt334.cnf,6406,6451.8,38457.4
+XSEngine.cnf,5651,5693.2,36702.4
