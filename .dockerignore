@@ -1,0 +1,7 @@
+.git
+build
+artifact_outputs
+*.tar
+*.tar.gz
+*.zip
+.DS_Store

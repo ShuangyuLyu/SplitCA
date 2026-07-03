@@ -3,6 +3,10 @@
 *SplitCA* is a novel and effective algorithm for solving large-scale 4-wise CCAG problems.
 This repository provides the implementation of *SplitCA*, the testing instances used in the experiments, and the corresponding experimental results.
 
+## Artifact Evaluation
+
+The ASE 2026 artifact package instructions are in [artifacts/README.md](artifacts/README.md). They include the containerized setup, smoke test, reduced reproduction workflow, full reproduction workflow.
+
 ## How to Obtain *SplitCA*
 
 *SplitCA* is [publicly available on GitHub](https://github.com/ShuangyuLyu/SplitCA). To obtain *SplitCA*, use `git clone` to get a local copy of the GitHub repository:

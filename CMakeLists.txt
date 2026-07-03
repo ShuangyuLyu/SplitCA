@@ -27,10 +27,12 @@ FetchContent_Declare(clipp
 )
 FetchContent_MakeAvailable(clipp)
 # Replace `std::result_of<Fn(Args...)>::type`
-execute_process(COMMAND sed -i "s/std::result_of<Fn\(Args...\)>::type/std::invoke_result_t<Fn, Args...>/g" ${CMAKE_BINARY_DIR}/_deps/clipp-src/include/clipp.h)
-execute_process(COMMAND sed -i "s/std::result_of<Fn\(\)>::type/std::invoke_result_t<Fn>/g" ${CMAKE_BINARY_DIR}/_deps/clipp-src/include/clipp.h)
-# Add [[maybe_unused]] attribute to disable warning.
-execute_process(COMMAND sed -i "1409c [[maybe_unused]] int i = 0;" ${CMAKE_BINARY_DIR}/_deps/clipp-src/include/clipp.h)
+set(CLIPP_HEADER "${CMAKE_BINARY_DIR}/_deps/clipp-src/include/clipp.h")
+file(READ "${CLIPP_HEADER}" CLIPP_HEADER_CONTENTS)
+string(REPLACE "std::result_of<Fn(Args...)>::type" "std::invoke_result_t<Fn, Args...>" CLIPP_HEADER_CONTENTS "${CLIPP_HEADER_CONTENTS}")
+string(REPLACE "std::result_of<Fn()>::type" "std::invoke_result_t<Fn>" CLIPP_HEADER_CONTENTS "${CLIPP_HEADER_CONTENTS}")
+string(REPLACE "        int i = 0;" "        [[maybe_unused]] int i = 0;" CLIPP_HEADER_CONTENTS "${CLIPP_HEADER_CONTENTS}")
+file(WRITE "${CLIPP_HEADER}" "${CLIPP_HEADER_CONTENTS}")
 target_link_libraries(${PROJECT_NAME} PRIVATE clipp::clipp)
 
 # minisat (with extension)
