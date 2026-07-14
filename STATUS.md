@@ -1,4 +1,4 @@
-SplitCA ASE 2026 Artifact Status
+*SplitCA* ASE 2026 Artifact Status
 ================================
 
 Requested badges
@@ -17,9 +17,9 @@ verification evidence:
   - README.md provides a reviewer-oriented Getting Started guide and detailed
     reproduction instructions.
   - Dockerfile provides a containerized executable environment for the artifact.
-  - artifact/smoke_test.sh builds the tool if needed, runs SplitCA on included
-    test inputs, and validates the generated covering arrays with
-    build/bin/check_tuples.
+  - artifacts/scripts/smoke_test.sh runs *SplitCA* on included test inputs and
+    validates the generated covering arrays with build/bin/check_tuples inside
+    the container.
   - The smoke test checks known tuple counts:
       * 3-wise axtls: 916254
       * 4-wise axtls: 37505369
@@ -32,12 +32,13 @@ The artifact is structured and documented for reuse beyond simply rerunning the
 paper examples:
 
   - README.md documents the CLI options and gives direct commands for running
-    SplitCA on CNF and d-DNNF inputs.
+    *SplitCA* on CNF and d-DNNF inputs.
   - The source layout is described so future users can locate parsing,
     generation, optimization, and validation code.
   - Benchmarks and result tables are provided in standard CNF and CSV formats.
-  - artifact/reproduce_results.sh supports smoke, reduced, table-check, and full
-    modes, including controls for long-running experiments.
+  - artifacts/scripts/run_representative.sh and
+    artifacts/scripts/run_full.sh support bounded and full reproduction modes,
+    including a fixed-seed control for long-running experiments.
   - THIRD_PARTY_NOTICES.md identifies the third-party components and helper
     executables relevant to reuse.
 
@@ -46,8 +47,9 @@ Available badge justification
 
 The artifact is prepared for public archival release:
 
-  - LICENSE provides open-source distribution terms for SplitCA.
-  - artifact/make_archive.sh creates a clean source archive suitable for deposit.
+  - LICENSE.md provides open-source distribution terms for *SplitCA*.
+  - The repository contains the source archive material and a prebuilt
+    container image archive suitable for deposit.
   - The authors should deposit the archive, and preferably a prebuilt container
     image archive, in a persistent archival repository such as Zenodo, FigShare,
     or Software Heritage.

@@ -1,4 +1,4 @@
-SplitCA ASE 2026 Artifact Requirements
+*SplitCA* ASE 2026 Artifact Requirements
 ======================================
 
 Recommended evaluation environment
@@ -35,7 +35,7 @@ Artifact-specific binaries:
 
 Because these helper binaries are Linux x86_64 executables, the fully executable
 artifact should be evaluated in the provided container or an equivalent Linux
-x86_64 VM. Native macOS or Windows builds may compile SplitCA itself, but they
+x86_64 VM. Native macOS or Windows builds may compile *SplitCA* itself, but they
 cannot run the packaged helper binaries without Linux compatibility support.
 
 Native Ubuntu 24.04 requirements
@@ -48,7 +48,7 @@ For reviewers who do not use Docker/Podman:
 
 Then build with:
 
-  cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+  cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_STANDARD=20
   cmake --build build --target SplitCA check_tuples -j"$(nproc)"
 
 Long-running experiments
